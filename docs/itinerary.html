@@ -62,6 +62,31 @@
         .family-both { background-color: #e2e6ea; color: #555; }
         .family-call { background-color: #d1ecf1; color: #0c5460; }
         .family-edwards { background-color: #fff3cd; color: #856404; }
+        .instruction-link {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: underline;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+            font-size: 0.85em;
+            font-style: italic;
+            transition: background-color 0.2s, border-color 0.2s;
+            line-height: 1.4;
+        }
+        .instruction-link:hover {
+            background-color: #e8e8e8;
+            border-color: #bbb;
+            color: #000;
+        }
+        .instruction-link::after {
+            content: " →";
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 5px;
+            font-style: normal;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +108,7 @@
                 <thead>
                     <tr>
                         <th>Location</th>
+                        <th>Instructions</th>
                         <th>Family</th>
                         <th>Date(s)</th>
                     </tr>
@@ -94,6 +120,7 @@
                             <a href="cards/prince-park-tower.html" class="location-name">The Prince Park Tower Tokyo</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=The+Prince+Park+Tower+Tokyo+4-8-1+Shibakoen,+Minato+City,+Tokyo+105-8563,+Japan" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/prince-park-tower.html" class="instruction-link">Check-in Dec 20/22; take taxi from airport.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Call: Dec 20-26<br>Edwards: Dec 22-26</td>
                     </tr>
@@ -103,6 +130,7 @@
                             <a href="cards/laundry-mammaciao.html" class="location-name">Comfort Aoki (Shiba 3-Chome)</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Comfort+Aoki+17-2+Shiba+3-Chome" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/laundry-mammaciao.html" class="instruction-link">24-hour coin laundry 8 min walk away.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 21, 22</td>
                     </tr>
@@ -112,6 +140,7 @@
                             <a href="cards/teamlab-borderless.html" class="location-name">TeamLab Borderless</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=teamLab+Borderless+Azabudai+Hills+Garden+Plaza+B+B1,+1-2-4+Azabudai,+Minato-ku,+Tokyo+106-0041" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/teamlab-borderless.html" class="instruction-link">Depart 8:15 AM for 9:00 AM entry.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 23 (9:00 AM)</td>
                     </tr>
@@ -121,6 +150,7 @@
                             <a href="cards/tsukiji-market.html" class="location-name">Tsukiji Outer Market Tour</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+4+Chome-10-16+Tsukiji,+Chuo+City,+Tokyo+104-0045" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/tsukiji-market.html" class="instruction-link">Meet guide at 12:00 PM at Garden Plaza B.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 23 (12:00 PM)</td>
                     </tr>
@@ -130,6 +160,7 @@
                             <a href="cards/sumo-practice.html" class="location-name">Sumo Practice (Tatsunami-Beya)</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Tatsunami-Beya+1-16-5+Hashiba,+Taito-ku,+Tokyo" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/sumo-practice.html" class="instruction-link">Pick up 7:00 AM; strict silence required.</a></td>
                         <td><span class="family-badge family-edwards">Edwards</span></td>
                         <td>Dec 25 (7:30 AM)</td>
                     </tr>
@@ -139,6 +170,7 @@
                             <a href="cards/yayoi-kusama-museum.html" class="location-name">Yayoi Kusama Museum</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Yayoi+Kusama+Museum+107+Benten-cho,+Shinjuku-ku,+Tokyo+162-0851" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/yayoi-kusama-museum.html" class="instruction-link">Arrive by 1:00 PM; timed entry.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 25 (1:00 PM)</td>
                     </tr>
@@ -148,6 +180,7 @@
                             <a href="cards/thousand-kyoto.html" class="location-name">The Thousand Kyoto</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=The+Thousand+Kyoto+570+Higashi+Shiokoji-cho,+Shimogyo-ku,+Kyoto+600-8216" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/thousand-kyoto.html" class="instruction-link">Check-in Dec 26; 2-3 min walk from station.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 26-29</td>
                     </tr>
@@ -157,6 +190,7 @@
                             <a href="cards/uosaburo.html" class="location-name">Uosaburo</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Uosaburo+3-187+Kyomachi,+Fushimi-ku,+Kyoto" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/uosaburo.html" class="instruction-link">6:00 PM reservation; wear nice socks.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 26 (6:00 PM)</td>
                     </tr>
@@ -166,6 +200,7 @@
                             <a href="cards/kobe-beef-kisshokichi.html" class="location-name">Kobe Beef Kisshokichi</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Kobe+Beef+Kisshokichi+Kyoto+Main+Store+521+Kami-Osaka-cho,+Nakagyo-ku,+Kyoto" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/kobe-beef-kisshokichi.html" class="instruction-link">7:00 PM reservation at Kyoto Main Store.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 27 (7:00 PM)</td>
                     </tr>
@@ -175,6 +210,7 @@
                             <a href="cards/teamlab-biovortex.html" class="location-name">TeamLab Biovortex Kyoto</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=TeamLab+Biovortex+Kyoto+21-5+Higashi-Iwamotocho,+Minami-ku,+Kyoto" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/teamlab-biovortex.html" class="instruction-link">4:00 PM entry; 7-10 min walk from station.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 28 (4:00 PM)</td>
                     </tr>
@@ -184,6 +220,7 @@
                             <a href="cards/keio-plaza-hotel.html" class="location-name">Keio Plaza Hotel Tokyo</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Keio+Plaza+Hotel+Tokyo+2-2-1+Nishi-Shinjuku,+Shinjuku-ku,+Tokyo+160-8330" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/keio-plaza-hotel.html" class="instruction-link">Check-in Dec 29; near Shinjuku Station.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 29 - Jan 1</td>
                     </tr>
@@ -193,6 +230,7 @@
                             <a href="cards/teamlab-planets.html" class="location-name">TeamLab Planets</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=TeamLab+Planets+Toyosu+6-1-16+Toyosu,+Koto-ku,+Tokyo" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/teamlab-planets.html" class="instruction-link">9:00 AM entry; wear roll-up pants.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 30 (9:00 AM)</td>
                     </tr>
@@ -202,6 +240,7 @@
                             <a href="cards/shibuya-sky.html" class="location-name">Shibuya Sky</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Square+2-24-12+Shibuya,+Shibuya-ku,+Tokyo" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/shibuya-sky.html" class="instruction-link">1:20 PM entry; lockers required for bags.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 30 (1:20 PM)</td>
                     </tr>
@@ -211,6 +250,7 @@
                             <a href="cards/shibuya-food-tour.html" class="location-name">Best of Shibuya Food Tour</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Hachiko+Exit+Shibuya+Station+Wall+Mural" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/shibuya-food-tour.html" class="instruction-link">Meet 4:00 PM at Hachiko Wall Mural.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 30 (4:00 PM)</td>
                     </tr>
@@ -220,6 +260,7 @@
                             <a href="cards/oji-inari-shrine.html" class="location-name">Oji Inari-Jinja Shrine Fox Parade</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Oji+Inari-jinja+Shrine+1-12-26+Kishi-machi,+Kita-ku,+Tokyo" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td><a href="instructions/oji-inari-shrine.html" class="instruction-link">Midnight parade; dress warmly.</a></td>
                         <td><span class="family-badge family-both">Both</span></td>
                         <td>Dec 31 / Jan 1</td>
                     </tr>

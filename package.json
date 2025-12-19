@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node scripts/generate-screenshots.js && rm -rf docs && mkdir docs && cp -R src/* docs/"
+    "build": "node scripts/generate-screenshots.js && rm -rf docs && mkdir docs && cp -R src/* docs/",
+    "build:quick": "rm -rf docs && mkdir docs && cp -R src/* docs/"
   },
   "repository": {
     "type": "git",
