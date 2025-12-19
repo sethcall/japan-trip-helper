@@ -1,0 +1,25 @@
+{
+  "name": "japan-trip-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/generate-screenshots.js && rm -rf docs && mkdir docs && cp -R src/* docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethcall/japan-trip-helper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sethcall/japan-trip-helper/issues"
+  },
+  "homepage": "https://github.com/sethcall/japan-trip-helper#readme",
+  "dependencies": {
+    "puppeteer": "^24.34.0"
+  }
+}

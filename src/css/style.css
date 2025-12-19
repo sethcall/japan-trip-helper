@@ -1,0 +1,162 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    color: #555;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-header h1 {
+    color: #d63384; /* Pinkish for cherry blossom vibe */
+}
+
+.cherry-blossom-container {
+    margin-top: 20px;
+}
+
+/* Address Card Styles */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.address-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 6px 6px 0 0;
+    margin: -30px -30px 20px -30px;
+    text-align: center;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.card-section {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.card-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    border-left: 4px solid #d63384;
+    padding-left: 10px;
+}
+
+.lang-group {
+    margin-bottom: 10px;
+}
+
+.lang-label {
+    font-weight: bold;
+    color: #888;
+    font-size: 0.9em;
+    display: block;
+}
+
+.lang-content {
+    font-size: 1.1em;
+    margin-top: 2px;
+}
+
+.lang-content.ja {
+    font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 1.3em;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: auto;
+        padding: 10px 20px;
+    }
+    .content {
+        padding: 20px;
+    }
+}
