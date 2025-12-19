@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestions - Japan Trip 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .address-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .address-table th, .address-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        .address-table th {
+            background-color: #28a745; /* Green for Suggestions to differentiate */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        .address-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        .location-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .location-type {
+            font-size: 0.8em;
+            color: #666;
+            text-transform: uppercase;
+            margin-right: 5px;
+        }
+        .map-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .map-link:hover {
+            text-decoration: underline;
+        }
+        .description-text {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header>
+                <h1>Suggestions</h1>
+            </header>
+            
+            <table class="address-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Location</th>
+                        <th style="width: 70%;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="location-type">Arcade:</span>
+                            <a href="cards/taito-station-akihabara.html" class="location-name">Taito Station Akihabara</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Taito+Station+Akihabara+4-2-2+Sotokanda,+Chiyoda-ku,+Tokyo" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td class="description-text">
+                            Akihabara is renowned for its multi-floor arcades (Game Centers). These venues offer everything from classic retro games to the latest rhythm and crane games (UFO catchers), forming a core part of the district's otaku culture. Taito Station is one of the most recognizable, easily identified by its giant Space Invader logo.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

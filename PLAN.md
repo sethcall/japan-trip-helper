@@ -1,32 +1,17 @@
 # Master Plan
 
-We are creating a static site web app, that uses github pages to publish.  
+We are creating a static site web app, hosted on GitHub Pages.
 
-This repository is a github repositiory. 
+This repository is a git repository.
 
-Most pages of this app will be single-purpose pages that are, for example, something I'd show to a Japanese taxi driver who doesn't speak English.
+Most pages of this app will be single-purpose pages (Cards) that are, for example, something I'd show to a Japanese taxi driver who doesn't speak English.
 
-We want a local build step that takes screenshots of each 'card' itself, so that a user can rapidly save the the 'card' for offline usage, to their phone.  That local build step is run before we push the code to github.   It could be a pre-commit hook.
+We want a local build step that takes screenshots of each 'card' itself, so that a user can rapidly save the 'card' for offline usage, to their phone. That local build step is run before we push the code to github. It could be a pre-commit hook.
 
-Here's the first card, the 'Address' card format.  This description will mix an example address, along with the general format we should always use for a address card'.
+## Address Card Format
 
 ```
-At the top of the card, title it with this, in Japanase!  
-
-'Hi, I need to go to this address!'
-
-And then the actual name and address in this format:
-
-Location: The Prince Park Tower Tokyo
-Address: Japanese: 4-8-1 Shibakoen, Minato City, Tokyo 105-8563, Japan,
-
-
-I believe this is the name of the hotel (location) The Prince Park Tower Tokyo ザ・プリンス パークタワー東京
-
-
-I want the format to be:
-
-Header: [Icon representing type] Hi, I need to go to this address!
+Header: [Icon representing type] Hi, I need to go to this address! (こんにちは、この住所へ行きたいです)
 
 Type: HOTEL / ホテル (Prominent)
 
@@ -39,13 +24,36 @@ destination (<small gray hint>)
 
 Address (<small gray hint>)
 <Japanese Address> | <English Address>
+
+[Google Maps Link] (Prominent link below header)
 ```
 
+## Itinerary Integration
 
-## First Prompt
+We process itinerary PDFs (`call_iteniary.pdf`, `edwards_iteniary.pdf`) into a consolidated `iteniary.md` database. This data drives the list of addresses.
 
-So let's generate the project using this; the left nav should have 'Addresses', and when you select it, all Address Cards available show up on a list in the main content window, and finally we have the one option. Prince Park Toyko as an option, and when you click it, you should have the 'Address Card' format, and, too, an image you can download that an image capture of the exact contents of the address card.
+## Site Structure
 
-The main page of the site, in Enlgish, and then Japanese, should say:
+*   **Home:** 'The Call and Edwards 2025 Japan Trip!', with a cherry-blossom graphic.
+*   **Itinerary:** A table listing key locations from the itinerary, associated family (Call, Edwards, or Both), dates, and a direct Google Maps link.
+    *   **Table Columns:** Location (Type: Name), Family, Date(s).
+    *   **Links:** Clicking the location name (if a card exists) goes to the detailed Address Card.
+    *   **Google Maps:** Each row has a direct link to Google Maps.
+*   **Suggestions:** A table listing suggested activities and locations not strictly on the scheduled itinerary.
+    *   **Table Columns:** Location, Description (with Google Maps link in Location column).
 
-'The Call and Edwards 2025 Japan Trip!', with a cherry-blossom graphic.
+## Current Status
+
+*   Project scaffolded with HTML/CSS.
+*   `call_iteniary.pdf` and `edwards_iteniary.pdf` converted to Markdown.
+*   `iteniary.md` created as a consolidated database of locations and map links.
+*   `src/itinerary.html` (formerly addresses.html) displays the itinerary table.
+*   `src/suggestions.html` created to display suggestions (e.g., Akihabara Arcade).
+*   Existing cards (`prince-park-tower.html`, `laundry-mammaciao.html`) updated with Google Maps links.
+*   Screenshot generation script exists (`scripts/generate-screenshots.js`).
+
+## Next Steps
+
+*   Create more Address Cards for other key locations in `iteniary.md` and `suggestions.html`.
+*   Refine the screenshot generation to handle the new map links (ensure they look good or are excluded if needed).
+*   Verify mobile responsiveness of the new table.
