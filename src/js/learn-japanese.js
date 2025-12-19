@@ -28,12 +28,10 @@ function initFullLists() {
 
 function renderListItem(item) {
     return `
-        <div class="jp-widget-card" style="height: auto; min-height: 150px;">
-            <div class="jp-content-area" style="margin-bottom: 0;">
-                <div class="jp-text jp-japanese">${item.jp}</div>
-                <div class="jp-text jp-phonetic">${item.phonetic}</div>
-                <div class="jp-text jp-english">${item.en}</div>
-            </div>
+        <div class="jp-compact-card">
+            <div class="jp-japanese">${item.jp}</div>
+            <div class="jp-phonetic">${item.phonetic}</div>
+            <div class="jp-english">${item.en}</div>
         </div>
     `;
 }

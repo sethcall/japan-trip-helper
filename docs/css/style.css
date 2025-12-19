@@ -426,6 +426,37 @@ body {
     to { opacity: 1; }
 }
 
+/* Compact Grid for Learn Pages */
+.compact-jp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.jp-compact-card {
+    background: white;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.jp-compact-card .jp-japanese {
+    font-size: 1.4em;
+    margin-bottom: 2px;
+}
+
+.jp-compact-card .jp-phonetic {
+    font-size: 0.85em;
+    margin-bottom: 2px;
+}
+
+.jp-compact-card .jp-english {
+    font-size: 1em;
+}
+
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .dashboard-container {
