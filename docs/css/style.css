@@ -309,3 +309,131 @@ body {
 
 .high { color: #d9534f; }
 .low { color: #007bff; }
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items vertically center */
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Adjust trip-status when inside dashboard */
+.dashboard-container .trip-status {
+    margin: 0; /* Remove default margin */
+    min-height: auto; /* Allow it to size naturally or match neighbors */
+    flex: 0 0 auto; /* Don't grow/shrink unexpectedly */
+}
+
+/* Japanese Widgets */
+.japanese-widget {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.jp-widget-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.jp-widget-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.jp-content-area {
+    min-height: 100px; /* Prevent jumping */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.jp-japanese {
+    font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.jp-phonetic {
+    font-size: 1em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.jp-english {
+    font-size: 1.2em;
+    color: #d63384; /* Pinkish */
+    font-weight: 500;
+}
+
+.jp-controls {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.jp-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 0.9em;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.jp-btn:hover {
+    background-color: #f0f8ff;
+    text-decoration: underline;
+}
+
+/* Animations */
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .japanese-widget {
+        width: 100%;
+        max-width: 100%;
+    }
+}

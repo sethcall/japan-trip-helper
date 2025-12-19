@@ -15,6 +15,8 @@
                 <li><a href="itinerary.html">Itinerary</a></li>
                 <li><a href="suggestions.html">Suggestions</a></li>
                 <li><a href="tips.html">Tips & Tricks</a></li>
+                <li><a href="words.html">Learn Words</a></li>
+                <li><a href="phrases.html">Learn Phrases</a></li>
             </ul>
         </nav>
         <main class="content">
@@ -26,7 +28,11 @@
                 </div>
             </header>
             <section class="intro">
-                <div id="trip-status" class="trip-status">Loading...</div>
+                <div class="dashboard-container">
+                    <div id="word-widget" class="japanese-widget"></div>
+                    <div id="trip-status" class="trip-status">Loading...</div>
+                    <div id="phrase-widget" class="japanese-widget"></div>
+                </div>
                 
                 <div style="width: 60%; margin: 20px auto; font-style: italic; color: #333; background-color: #f0f0f0; border: 2px solid #ccc; border-radius: 3px; padding: 15px; text-align: center;">
                     <p style="margin: 0 0 10px 0;">This website was built by AI; it read the itineraries given out on December 19th, it may become stale, and it may have mistakes. The original itineraries should be checked for any scheduled activities to make sure this web site is accurate.</p>
@@ -45,6 +51,8 @@
             </section>
         </main>
     </div>
+    <script src="js/japanese-data.js"></script>
+    <script src="js/learn-japanese.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
