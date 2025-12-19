@@ -1,0 +1,79 @@
+/* Popups / Tooltips */
+.tour-popup {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    z-index: 1000;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: none; /* Hidden by default */
+}
+
+.tour-popup::after {
+    content: "";
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    /* Arrow positioning will be handled in JS or specific classes */
+}
+
+/* Arrow Top (popup below element) */
+.tour-popup.arrow-top::after {
+    bottom: 100%;
+    left: 20px;
+    border-color: transparent transparent #333 transparent;
+}
+
+/* Arrow Left (popup to right of element) */
+.tour-popup.arrow-left::after {
+    right: 100%;
+    top: 50%;
+    margin-top: -8px;
+    border-color: transparent #333 transparent transparent;
+}
+
+.popup-content {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.popup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.popup-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    align-self: flex-end;
+}
+
+.popup-btn:hover {
+    background-color: #0056b3;
+}
+
+.dont-show-label {
+    font-size: 0.8em;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.highlight-element {
+    position: relative;
+    z-index: 1001; /* Bring above overlay if we had one, or just relative to popup */
+    background-color: #fff; /* Ensure bg is white if transparent */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3); /* Glow effect */
+    border-radius: 4px;
+}
