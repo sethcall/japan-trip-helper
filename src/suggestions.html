@@ -14,6 +14,7 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             border-radius: 8px;
             overflow: hidden;
+            margin-bottom: 40px;
         }
         .address-table th, .address-table td {
             padding: 15px;
@@ -59,6 +60,47 @@
             color: #555;
             line-height: 1.5;
         }
+        
+        /* Schedule Table Styles */
+        .schedule-section {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #007bff;
+        }
+        .schedule-section h2 {
+            margin-top: 0;
+            color: #0056b3;
+            font-size: 1.5em;
+        }
+        .schedule-section p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .schedule-table th, .schedule-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        .schedule-table td.status-open {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .schedule-table td.status-suggested {
+            color: #e67e22;
+        }
     </style>
 </head>
 <body>
@@ -69,29 +111,172 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="itinerary.html">Itinerary</a></li>
                 <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="tips.html">Tips & Tricks</a></li>
             </ul>
         </nav>
         <main class="content">
             <header>
                 <h1>Suggestions</h1>
             </header>
+
+            <section class="schedule-section">
+                <h2>Lightly Scheduled Days</h2>
+                <p>Here are the days we don't have too much scheduled. Use the suggestions table below to fill these gaps while traveling.</p>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Morning</th>
+                            <th>Afternoon</th>
+                            <th>Evening</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dec 21 (Sun)</strong></td>
+                            <td class="status-open">Open</td>
+                            <td class="status-open">Open</td>
+                            <td class="status-suggested"><a href="#akihabara">Akihabara</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dec 22 (Mon)</strong></td>
+                            <td class="status-open">Open</td>
+                            <td class="status-open">Open</td>
+                            <td class="status-open">Open</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dec 24 (Wed)</strong></td>
+                            <td class="status-suggested"><a href="#asakusa">Asakusa</a></td>
+                            <td class="status-suggested"><a href="#sushiro">Lunch</a></td>
+                            <td class="status-suggested"><a href="#marunouchi">Marunouchi Lights</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dec 31 (Wed)</strong></td>
+                            <td class="status-open">Open</td>
+                            <td class="status-suggested"><a href="#ginza">Ginza Shopping</a></td>
+                            <td class="status-suggested"><a href="#fox-parade">Fox Parade</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
             
             <table class="address-table">
                 <thead>
                     <tr>
-                        <th style="width: 30%;">Location</th>
-                        <th style="width: 70%;">Description</th>
+                        <th style="width: 25%;">Location</th>
+                        <th style="width: 15%;">Date (Optional)</th>
+                        <th style="width: 60%;">Description</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr id="asakusa">
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/senso-ji.html" class="location-name">Senso-ji Temple & Nakamise St</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Senso-ji+Temple+Asakusa+Tokyo" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 24</td>
+                        <td class="description-text">
+                            Enter through Kaminarimon Gate, walk down Nakamise Street for snacks and souvenirs, and explore the historic Senso-ji temple grounds.
+                        </td>
+                    </tr>
+                    <tr id="sushiro">
+                        <td>
+                            <span class="location-type">Restaurant:</span>
+                            <a href="cards/sushiro-asakusa.html" class="location-name">Sushiro Asakusa Azumabashi</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Sushiro+Asakusa+Azumabashi" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 24 (Lunch)</td>
+                        <td class="description-text">
+                            Popular conveyor-belt sushi restaurant located just a short walk from Asakusa Station. Great for a casual, fun lunch.
+                        </td>
+                    </tr>
+                    <tr id="marunouchi">
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/marunouchi-illumination.html" class="location-name">Marunouchi Illumination</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Marunouchi+Naka-dori+Tokyo" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 24 (Evening)</td>
+                        <td class="description-text">
+                            Champagne gold lights illuminating the entire boulevard. Located immediately from JR/Tokyo Metro "Tokyo Station" Marunouchi South Exit.
+                        </td>
+                    </tr>
+                    <tr id="akihabara">
                         <td>
                             <span class="location-type">Arcade:</span>
                             <a href="cards/taito-station-akihabara.html" class="location-name">Taito Station Akihabara</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Taito+Station+Akihabara+4-2-2+Sotokanda,+Chiyoda-ku,+Tokyo" class="map-link" target="_blank">Google Maps</a>
                         </td>
+                        <td>Dec 21/22 (Evening)</td>
                         <td class="description-text">
-                            Akihabara is renowned for its multi-floor arcades (Game Centers). These venues offer everything from classic retro games to the latest rhythm and crane games (UFO catchers), forming a core part of the district's otaku culture. Taito Station is one of the most recognizable, easily identified by its giant Space Invader logo.
+                            Akihabara is renowned for its multi-floor arcades. Taito Station is one of the most recognizable, offering everything from retro games to UFO catchers.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/takeshita-street.html" class="location-name">Harajuku & Omotesando</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku+Tokyo" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 25</td>
+                        <td class="description-text">
+                            Stroll through Takeshita Street for colorful shops and crepes, walk Cat Street, and explore the beautiful Omotesando illuminations.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/yasaka-shrine.html" class="location-name">Gion & Higashiyama Night Stroll</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Gion+Kyoto" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 26 (Night)</td>
+                        <td class="description-text">
+                            A perfect after-dinner activity. Walk through Hanamikoji Street and along the Shirakawa Canal, ending at Yasaka Shrine.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/arashiyama-bamboo.html" class="location-name">Arashiyama Morning</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 28</td>
+                        <td class="description-text">
+                            Start at Otagi Nenbutsu-ji and walk downhill through the preserved streets to the famous Bamboo Grove.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/nishiki-market.html" class="location-name">Nishiki Market</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 29</td>
+                        <td class="description-text">
+                            Explore "Kyoto's Kitchen", a narrow shopping street lined with more than one hundred shops and restaurants.
+                        </td>
+                    </tr>
+                    <tr id="ginza">
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/ginza-six.html" class="location-name">Ginza Shopping</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 31</td>
+                        <td class="description-text">
+                            Enjoy high-end shopping and dining in Ginza. Stores typically close around 6:00 PM on New Year's Eve.
+                        </td>
+                    </tr>
+                     <tr id="fox-parade">
+                        <td>
+                            <span class="location-type">Activity:</span>
+                            <a href="cards/oji-inari-shrine.html" class="location-name">Oji Inari-Jinja Shrine Fox Parade</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Oji+Inari-jinja+Shrine+Tokyo" class="map-link" target="_blank">Google Maps</a>
+                        </td>
+                        <td>Dec 31 (Midnight)</td>
+                        <td class="description-text">
+                            A unique New Year's Eve tradition where locals dress as foxes and parade to the shrine.
                         </td>
                     </tr>
                 </tbody>

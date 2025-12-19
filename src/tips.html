@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips & Tricks - Japan Trip 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tips-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .tips-section h2 {
+            color: #d63384;
+            border-bottom: 2px solid #ffc0cb;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .tip-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .tip-card h3 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+        .tip-card ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .tip-card li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        /* Sticky Header specific to this page as requested */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #f0f2f5;
+            padding: 10px 0;
+            z-index: 1000;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .sticky-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #d63384;
+        }
+        .sticky-header .destination-hint {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #current-dest {
+            color: #d63384;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="tips.html">Tips & Tricks</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header class="sticky-header">
+                <h1>Tips & Tricks</h1>
+                <div class="destination-hint">Japan 2025 - <span id="current-dest">Tokyo</span></div>
+            </header>
+
+            <script>
+                function updateDestination() {
+                    const now = new Date();
+                    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+                    const tokyoOffset = 9 * 60 * 60 * 1000;
+                    const tokyoDate = new Date(utc + tokyoOffset);
+                    
+                    const month = tokyoDate.getMonth();
+                    const date = tokyoDate.getDate();
+                    const year = tokyoDate.getFullYear();
+
+                    let dest = 'Tokyo';
+                    if (year === 2025 && month === 11 && date >= 26 && date <= 29) {
+                        dest = 'Kyoto';
+                    }
+                    document.getElementById('current-dest').textContent = dest;
+                }
+                updateDestination();
+                setInterval(updateDestination, 60000);
+            </script>
+
+            <div class="tips-section">
+                <h2>Before You Go</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Money & Payments</h3>
+                        <ul>
+                            <li><strong>Cash is king:</strong> Smaller restaurants, izakayas, and local vendors often prefer cash.</li>
+                            <li><strong>ATMs:</strong> Use 7-Eleven, Lawson, & FamilyMart for foreign cards.</li>
+                            <li><strong>Currency:</strong> Japanese Yen (¥). Bring some for taxis and temple donations.</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Tipping Etiquette</h3>
+                        <ul>
+                            <li><strong>No tipping:</strong> It's not customary and can be considered rude.</li>
+                            <li><strong>Private Guides:</strong> If tipping, use a small, clean envelope.</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Cultural Norms</h3>
+                        <ul>
+                            <li><strong>Shoes off:</strong> Remove shoes in homes, ryokans, and some temples.</li>
+                            <li><strong>Quiet in public:</strong> Keep conversations low on trains; avoid phone calls.</li>
+                            <li><strong>Punctuality:</strong> Trains and tours run exactly on time.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h2>Transportation</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Suica Card</h3>
+                        <ul>
+                            <li>Works on nearly all trains, subways, and buses.</li>
+                            <li>Add to Apple Wallet via the U.S. Suica app for easy tap-and-go.</li>
+                            <li>Can be used at convenience stores and vending machines.</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Taxis & Ubers</h3>
+                        <ul>
+                            <li><strong>GO and JapanTaxi:</strong> Popular local apps with English support.</li>
+                            <li><strong>Regular Taxis:</strong> Doors open automatically. Have destination in Japanese ready.</li>
+                            <li><strong>Uber:</strong> Works in larger cities but is more limited.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h2>Dining</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Fragrance Policy</h3>
+                        <ul>
+                            <li>Many high-end restaurants have an unspoken <strong>no-strong-fragrance policy</strong> to avoid interfering with delicate food aromas.</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Must-Try Dishes</h3>
+                        <ul>
+                            <li>Sushi, Kaiseki, Tempura, Ramen, Udon, Soba, Okonomiyaki, Takoyaki, Yakitori.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
