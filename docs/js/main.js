@@ -30,17 +30,40 @@ function updateDynamicBanner() {
         }
     }
 
-    // Time of Day Logic
-    // Night: 5PM (17:00) to 7AM (7:00)
-    const isNight = (tokyoHour >= 17 || tokyoHour < 7);
+    // Time of Day Logic (Tokyo Time)
+    // Day: 5:00 AM - 5:00 PM
+    // Evening: 5:00 PM - 9:00 PM
+    // Night: 9:00 PM - 5:00 AM
+    const isEvening = (tokyoHour >= 17 && tokyoHour < 21);
+    const isNight = (tokyoHour >= 21 || tokyoHour < 5);
+    // Otherwise it's day
 
     let imageSrc = '';
 
     if (isNight) {
         imageSrc = 'assets/webp/night.webp';
-    } else {
+    } else if (isEvening) {
         if (isKyoto) {
-            imageSrc = 'assets/webp/kyoto-day.webp';
+            imageSrc = 'assets/gif/kyoto-evening.gif';
+        } else {
+            // Tokyo Evening: Random between two gifs
+            const tokyoEveningImages = [
+                'assets/gif/tokyo-evening.gif',
+                'assets/gif/tokyo-evening-1.gif'
+            ];
+            const randomIndex = Math.floor(Math.random() * tokyoEveningImages.length);
+            imageSrc = tokyoEveningImages[randomIndex];
+        }
+    } else {
+        // Day
+        if (isKyoto) {
+            // Kyoto Day: Random between two webps
+            const kyotoDayImages = [
+                'assets/webp/kyoto-day.webp',
+                'assets/webp/kyoto-day-1.webp'
+            ];
+            const randomIndex = Math.floor(Math.random() * kyotoDayImages.length);
+            imageSrc = kyotoDayImages[randomIndex];
         } else {
             imageSrc = 'assets/webp/tokyo-day.webp';
         }
