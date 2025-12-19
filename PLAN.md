@@ -26,19 +26,19 @@ I believe this is the name of the hotel (location) The Prince Park Tower Tokyo �
 
 I want the format to be:
 
+Header: [Icon representing type] Hi, I need to go to this address!
 
-destination (<insert Japanese word for location>)
+Type: HOTEL / ホテル (Prominent)
 
-Japanese (insert Japanese word for Japanese language): Japanese native way of describing the location
+Layout: Side-by-side columns (Left: Japanese, Right: English)
 
-English: (<insert Japanese word for English language>): English name of the destination
+Column Headers: Japanese | English
 
+destination (<small gray hint>)
+<Japanese Name> | <English Name>
 
-Address (<insert Japanese word for address>)
-
-Japanese (<insert Japanese word for Japanese language>): Japanese native way of describing the address
-
-English: English name of the address 
+Address (<small gray hint>)
+<Japanese Address> | <English Address>
 ```
 
 
