@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdown();
     fetchWeather();
     updateDynamicBanner();
+    setupCurrencyConverter();
 });
 
 function updateDynamicBanner() {
@@ -117,8 +118,8 @@ function updateCountdown() {
 
 async function fetchWeather() {
     const locations = [
-        { name: 'Tokyo', lat: 35.6895, long: 139.6917, id: 'weather-tokyo' },
-        { name: 'Kyoto', lat: 35.0116, long: 135.7681, id: 'weather-kyoto' }
+        { name: 'Tokyo', lat: 35.6895, long: 139.6917, id: 'weather-tokyo', url: 'https://www.jma.go.jp/bosai/forecast/#area_code=130000&area_type=offices' },
+        { name: 'Kyoto', lat: 35.0116, long: 135.7681, id: 'weather-kyoto', url: 'https://www.jma.go.jp/bosai/forecast/#area_code=260000&area_type=offices' }
     ];
 
     for (const loc of locations) {
@@ -136,7 +137,7 @@ async function fetchWeather() {
 
 function renderWeather(location, data) {
     const container = document.getElementById(location.id);
-    let html = `<h3>${location.name}</h3><div class="forecast-grid">`;
+    let html = `<h3><a href="${location.url}" target="_blank">${location.name}</a></h3><div class="forecast-grid">`;
 
     const daily = data.daily;
     const days = ['Today', 'Tomorrow', 'Day After'];
@@ -193,4 +194,32 @@ function getWeatherDesc(code) {
     if (code <= 67) return 'Rain';
     if (code <= 77) return 'Snow';
     return 'Precipitation';
+}
+
+function setupCurrencyConverter() {
+    const yenInput = document.getElementById('yen-input');
+    const usdInput = document.getElementById('usd-input');
+    const RATE = 157; // 1 USD = 157 JPY
+
+    if (!yenInput || !usdInput) return;
+
+    yenInput.addEventListener('input', () => {
+        const yen = parseFloat(yenInput.value);
+        if (!isNaN(yen)) {
+            const usd = yen / RATE;
+            usdInput.value = usd.toFixed(2);
+        } else {
+            usdInput.value = '';
+        }
+    });
+
+    usdInput.addEventListener('input', () => {
+        const usd = parseFloat(usdInput.value);
+        if (!isNaN(usd)) {
+            const yen = usd * RATE;
+            yenInput.value = Math.round(yen); // Yen usually no decimals
+        } else {
+            yenInput.value = '';
+        }
+    });
 }

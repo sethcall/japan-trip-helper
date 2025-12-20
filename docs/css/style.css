@@ -278,6 +278,16 @@ body {
     margin-bottom: 15px;
 }
 
+.weather-box h3 a {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.weather-box h3 a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker blue on hover */
+}
+
 .forecast-grid {
     display: flex;
     justify-content: space-between;
@@ -466,5 +476,108 @@ body {
     .japanese-widget {
         width: 100%;
         max-width: 100%;
+    }
+}
+
+/* Conversion Section */
+.conversion-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    margin-bottom: 40px;
+    max-width: 800px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.conversion-section h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.4em;
+    border-bottom: 2px solid #28a745; /* Green for money */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.conversion-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.conversion-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.conversion-table th, .conversion-table td {
+    padding: 8px 15px;
+    border: 1px solid #eee;
+    text-align: right;
+}
+
+.conversion-table th {
+    background-color: #f8f9fa;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+}
+
+.converter-inputs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100px;
+}
+
+.converter-arrow {
+    font-size: 1.5em;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.conversion-rate-note {
+    margin-top: 15px;
+    font-size: 0.8em;
+    color: #888;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .conversion-content {
+        flex-direction: column;
+        align-items: center;
     }
 }
