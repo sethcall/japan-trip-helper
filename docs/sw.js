@@ -1,4 +1,4 @@
-const CACHE_NAME = 'japan-trip-v4';
+const CACHE_NAME = 'japan-trip-v5';
 const URLS_TO_CACHE = [
   './',
   'index.html',
@@ -13,8 +13,10 @@ const URLS_TO_CACHE = [
   'js/japanese-data.js',
   'js/learn-japanese.js',
   'js/sw-register.js',
+  'js/modal.js',
   'manifest.json',
   'assets/infographics/app-icon.jpg',
+  'assets/infographics/phrases-graphic.jpeg',
   'prince-park.html',
   'assets/photos/le-pain-quotidien-1.jpg'
 ];
@@ -26,7 +28,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Opened cache v4');
+        console.log('Opened cache v5');
         return cache.addAll(URLS_TO_CACHE);
       })
   );
