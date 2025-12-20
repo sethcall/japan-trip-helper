@@ -645,3 +645,43 @@ body {
         margin-top: 100px;
     }
 }
+
+/* Time Widget */
+.time-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    flex: 0 0 auto;
+    min-width: 200px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    justify-content: center;
+}
+
+.time-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.time-icon {
+    font-size: 1.8em;
+}
+
+.time-label {
+    font-weight: bold;
+    color: #555;
+    flex: 1;
+    font-size: 1.1em;
+}
+
+.time-value {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff;
+}

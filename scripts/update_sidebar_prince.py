@@ -7,7 +7,7 @@ root_files = ['src/index.html', 'src/itinerary.html', 'src/suggestions.html', 's
 # Card files
 card_files = glob.glob('src/cards/*.html')
 
-root_target = '<li><a href="tips.html">Tips & Tricks</a></li>'
+root_target = '<li><a href="tips.html">General Travel Tips</a></li>'
 root_insert = '                <li><a href="prince-park.html">Prince Park</a></li>'
 
 card_target = '<li><a href="../suggestions.html">Suggestions</a></li>'

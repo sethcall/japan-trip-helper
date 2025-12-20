@@ -2,7 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdown();
     fetchWeather();
     updateDynamicBanner();
+    updateTime();
+    setInterval(updateTime, 1000);
 });
+
+function updateTime() {
+    const now = new Date();
+    
+    // Japan Time (UTC+9)
+    const optionsJp = { timeZone: 'Asia/Tokyo', hour: 'numeric', minute: '2-digit', hour12: true };
+    const timeJp = new Intl.DateTimeFormat('en-US', optionsJp).format(now);
+    
+    // CST Time (America/Chicago)
+    const optionsCst = { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', hour12: true };
+    const timeCst = new Intl.DateTimeFormat('en-US', optionsCst).format(now);
+
+    const elJp = document.getElementById('time-japan');
+    const elCst = document.getElementById('time-cst');
+
+    if (elJp) elJp.textContent = timeJp;
+    if (elCst) elCst.textContent = timeCst;
+}
 
 function updateDynamicBanner() {
     const bannerElement = document.getElementById('dynamic-banner');

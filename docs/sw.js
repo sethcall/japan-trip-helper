@@ -1,10 +1,11 @@
-const CACHE_NAME = 'japan-trip-v10';
+const CACHE_NAME = 'japan-trip-v11';
 const URLS_TO_CACHE = [
   './',
   'index.html',
   'itinerary.html',
   'suggestions.html',
   'sunday-schedule.html',
+  'ginza-shopping.html',
   'subway-tips.html',
   'tips.html',
   'words.html',
