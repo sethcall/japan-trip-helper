@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Park Walkables - Japan Trip 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .address-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .address-table th, .address-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        .address-table th {
+            background-color: #d63384; /* Pink for Prince Park */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        .address-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        .location-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .location-type {
+            font-size: 0.8em;
+            color: #666;
+            text-transform: uppercase;
+            margin-right: 5px;
+        }
+        .map-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .map-link:hover {
+            text-decoration: underline;
+        }
+        .description-text {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/infographics/app-icon.jpg">
+    <link rel="icon" type="image/jpeg" href="assets/infographics/app-icon.jpg">
+</head>
+<body>
+    <div class="layout">
+        <nav class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="itinerary.html">Itinerary</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="tips.html">Tips & Tricks</a></li>
+                <li><a href="prince-park.html">Prince Park</a></li>
+                <li><a href="words.html">Learn Words</a></li>
+                <li><a href="phrases.html">Learn Phrases</a></li>
+                <li><a href="install.html">Install App</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header>
+                <h1>Prince Park Tower Tips</h1>
+            </header>
+
+            <section>
+                <h2>Walkables around Prince Park Hotel</h2>
+                <p>These are walkable options around Prince Park Hotel.</p>
+                
+                <table class="address-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Location</th>
+                            <th style="width: 75%;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="location-type">French Food:</span>
+                                <span class="location-name">Le Pain Quotidien Shiba Park</span>
+                                <span style="font-size:0.85em; display:block; color:#777; margin-bottom: 5px;">3-3-1 Shibakoen, Minato City</span>
+                                <a href="https://www.google.com/maps?s=web&lqi=ChFsZSBwYWluIHF1b3RpZGllbiIDiAEBSNaP8oDLrYCACFopEAAQARACGAAYARgCIhFsZSBwYWluIHF1b3RpZGllbioICAIQABABEAKSAQpyZXN0YXVyYW50&vet=12ahUKEwiDqpaG7syRAxWGj68BHTHHAC0Q1YkKegQIKBAB..i&cs=1&um=1&ie=UTF-8&fb=1&gl=jp&sa=X&geocode=KRnVbHbPixhgMTJq2QWs7Ixd&daddr=3+Chome-3-1+Shibakoen,+Minato+City,+Tokyo+105-8560" class="map-link" target="_blank">Google Maps</a>
+                            </td>
+                            <td class="description-text">
+                                <img src="assets/photos/le-pain-quotidien-1.jpg" alt="Le Pain Quotidien" style="float:right; width: 180px; margin: 0 0 10px 15px; border-radius: 4px; border: 1px solid #ccc;">
+                                <p>A bakery-restaurant serving simple, wholesome, and sustainable food. Known for their organic bread and communal tables.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="js/sw-register.js"></script>
+</body>
+</html>
