@@ -1,4 +1,4 @@
-const CACHE_NAME = 'japan-trip-v9';
+const CACHE_NAME = 'japan-trip-v10';
 const URLS_TO_CACHE = [
   './',
   'index.html',
@@ -22,6 +22,7 @@ const URLS_TO_CACHE = [
   'assets/infographics/app-icon.jpg',
   'assets/infographics/phrases-graphic.jpeg',
   'assets/infographics/example_gmaps.png',
+  'assets/infographics/add-to-home-screen-blogin-app.png',
   'prince-park.html',
   'assets/photos/le-pain-quotidien-1.jpg',
   'assets/sub_map_eng.pdf'
