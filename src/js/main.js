@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCountdown();
     fetchWeather();
     updateDynamicBanner();
-    setupCurrencyConverter();
 });
 
 function updateDynamicBanner() {
@@ -124,8 +123,8 @@ async function fetchWeather() {
 
     for (const loc of locations) {
         try {
-            // Added temperature_unit=fahrenheit to the API call
-            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.long}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=3&temperature_unit=fahrenheit`);
+            // Added sunrise,sunset to daily params
+            const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.long}&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=Asia%2FTokyo&forecast_days=3&temperature_unit=fahrenheit`);
             const data = await response.json();
             renderWeather(loc, data);
         } catch (error) {
@@ -137,7 +136,30 @@ async function fetchWeather() {
 
 function renderWeather(location, data) {
     const container = document.getElementById(location.id);
-    let html = `<h3><a href="${location.url}" target="_blank">${location.name}</a></h3><div class="forecast-grid">`;
+    
+    // Parse Sunrise/Sunset for Today (index 0)
+    const sunrise = data.daily.sunrise[0];
+    const sunset = data.daily.sunset[0];
+    
+    const formatTime = (isoString) => {
+        const date = new Date(isoString);
+        return date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    };
+
+    const sunriseTime = formatTime(sunrise);
+    const sunsetTime = formatTime(sunset);
+
+    let html = `<h3><a href="${location.url}" target="_blank">${location.name}</a></h3>`;
+    
+    // Insert Sun Times
+    html += `
+        <div class="sun-times" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; font-size: 0.95em; color: #555; background-color: #f8f9fa; padding: 5px; border-radius: 6px;">
+            <span title="Sunrise">🌅 ${sunriseTime}</span>
+            <span title="Sunset">🌇 ${sunsetTime}</span>
+        </div>
+    `;
+
+    html += `<div class="forecast-grid">`;
 
     const daily = data.daily;
     const days = ['Today', 'Tomorrow', 'Day After'];
@@ -194,32 +216,4 @@ function getWeatherDesc(code) {
     if (code <= 67) return 'Rain';
     if (code <= 77) return 'Snow';
     return 'Precipitation';
-}
-
-function setupCurrencyConverter() {
-    const yenInput = document.getElementById('yen-input');
-    const usdInput = document.getElementById('usd-input');
-    const RATE = 157; // 1 USD = 157 JPY
-
-    if (!yenInput || !usdInput) return;
-
-    yenInput.addEventListener('input', () => {
-        const yen = parseFloat(yenInput.value);
-        if (!isNaN(yen)) {
-            const usd = yen / RATE;
-            usdInput.value = usd.toFixed(2);
-        } else {
-            usdInput.value = '';
-        }
-    });
-
-    usdInput.addEventListener('input', () => {
-        const usd = parseFloat(usdInput.value);
-        if (!isNaN(usd)) {
-            const yen = usd * RATE;
-            yenInput.value = Math.round(yen); // Yen usually no decimals
-        } else {
-            yenInput.value = '';
-        }
-    });
 }
