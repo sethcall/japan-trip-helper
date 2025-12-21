@@ -159,6 +159,7 @@ def create_blog_post(date_str):
     html_parts.append('                <li><a href="sunday-schedule.html">Sunday Plan</a></li>\n')
     html_parts.append('                <li><a href="ginza-shopping.html">Ginza Shopping</a></li>\n')
     html_parts.append('                <li><a href="shibuya.html">Shibuya & Harajuku</a></li>\n')
+    html_parts.append('                <li><a href="akihabara.html">Akihabara Arcade</a></li>\n')
     html_parts.append('                <li><a href="suggestions.html">Suggestions</a></li>\n')
     html_parts.append('                <li><a href="tips.html">General Travel Tips</a></li>\n')
     html_parts.append('                <li><a href="prince-park.html">Prince Park</a></li>\n')

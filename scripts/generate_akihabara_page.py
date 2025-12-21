@@ -24,6 +24,10 @@ def markdown_to_html(md_text):
                 in_list = False
             continue
             
+        # Skip image definitions at the end
+        if line.startswith('[image'):
+            continue
+
         # Headers
         if line.startswith('# '):
             content = format_content(line[2:])
@@ -44,10 +48,9 @@ def markdown_to_html(md_text):
             match = re.search(r'image(\d+)', line)
             if match:
                 img_num = match.group(1)
-                src = f"assets/photos/shibuya/image{img_num}.png"
-                html_lines.append(f'<img src="{src}" alt="Shibuya Image {img_num}" style="max-width:100%; height:auto; margin: 20px 0; display:block;">')
+                src = f"assets/photos/akihabara/image{img_num}.png"
+                html_lines.append(f'<img src="{src}" alt="Akihabara Image {img_num}" style="max-width:100%; height:auto; margin: 20px 0; display:block;">')
             else:
-                # Fallback if regex fails but starts with ![][image...
                 html_lines.append(f'<p><em>Image placeholder: {line}</em></p>')
 
         # Lists
@@ -61,10 +64,6 @@ def markdown_to_html(md_text):
         
         # Standard Paragraphs
         else:
-            # Check for image definitions at the bottom [image1]: ... and skip/ignore
-            if line.startswith('[image'):
-                continue
-
             if in_list:
                 html_lines.append('</ul>')
                 in_list = False
@@ -77,47 +76,73 @@ def markdown_to_html(md_text):
         
     return '\n'.join(html_lines)
 
-def generate_shibuya_page():
-    # 1. Prepare Suggestions Data (Hardcoded based on shibuya.md)
+def generate_page():
+    # 1. Suggestions Data
     suggestions = [
         {
-            "type": "Breakfast",
-            "name": "Shinpachi Shokudō Shibuya Meijidōri",
-            "link": "https://maps.app.goo.gl/1qpvovcGsqpuy49x5",
-            "desc": "Charcoal-grilled fish set meals. Authentic, healthy, and reasonably priced. Opens at 7:00 AM.",
-            "image": "assets/photos/shinpachi.png" 
+            "type": "Breakfast/Brunch",
+            "name": "The French Toast Factory",
+            "link": "https://www.google.com/maps/search/?api=1&query=The+French+Toast+Factory+Yodobashi+Akiba",
+            "desc": "Renowned for soufflé pancakes. Located on the 8th floor of Yodobashi Akiba. Opens at 11:00 AM."
         },
         {
-            "type": "Lunch",
-            "name": "Uobei Shibuya Dogenzaka Store",
-            "link": "https://maps.app.goo.gl/jqab3X1upFMHhSSY6",
-            "desc": "High-speed chute delivery sushi. No rotating belt, made to order. Affordable and fast.",
-            "image": ""
+            "type": "Breakfast/Brunch",
+            "name": "Flying Scotsman",
+            "link": "https://www.google.com/maps/search/?api=1&query=Flying+Scotsman+Akihabara",
+            "desc": "Famous for thick, dense hotcakes. Opens 11:00 AM weekdays, 10:00 AM weekends."
         },
         {
-            "type": "Lunch",
-            "name": "Global Store Kura Sushi",
-            "link": "https://maps.app.goo.gl/PFWhedRhvAy2Sh2r5",
-            "desc": "Global flagship store with a Harajuku aesthetic. Automated check-in, gamified eating (Bikkura Pon). Popular, book in advance.",
-            "image": ""
+            "type": "Early Morning",
+            "name": "Coffee Renoir (Showa-dori Exit)",
+            "link": "https://www.google.com/maps/search/?api=1&query=Coffee+Renoir+Akihabara+Showa-dori",
+            "desc": "Traditional Japanese coffee house ('Kissaten') with comfortable velvet seats. Opens 7:30 AM."
         },
         {
-            "type": "Walk & Shop",
-            "name": "Cat Street",
-            "link": "https://maps.app.goo.gl/51631xRdruxkBMvg9", 
-            "desc": "A hip haven of youth fashion and culture. Stretches about 1km between Shibuya and Harajuku. Pedestrianized backstreet with vintage shops and hipster coffee stands.",
-            "image": ""
+            "type": "Early Morning",
+            "name": "Beck's Coffee Shop",
+            "link": "https://www.google.com/maps/search/?api=1&query=Beck's+Coffee+Shop+Akihabara+Electric+Town+Gate",
+            "desc": "Quick, functional morning plates. Located at the Electric Town Gate. Opens 6:30 AM."
+        },
+        {
+            "type": "Electronics",
+            "name": "Yodobashi Akiba",
+            "link": "https://www.google.com/maps/search/?api=1&query=Yodobashi+Camera+Multimedia+Akiba",
+            "desc": "Massive 9-story electronics complex. A theme park for consumerism. Opens 9:30 AM."
+        },
+        {
+            "type": "Electronics Components",
+            "name": "Akihabara Radio Center",
+            "link": "https://www.google.com/maps/search/?api=1&query=Akihabara+Radio+Center",
+            "desc": "Two-story warren of tiny stalls selling electronic components. Authentic cyberpunk bazaar atmosphere."
+        },
+        {
+            "type": "Anime/Figures",
+            "name": "Radio Kaikan",
+            "link": "https://www.google.com/maps/search/?api=1&query=Radio+Kaikan+Akihabara",
+            "desc": "10-story tower serving as a 'Vertical High Street' for otaku culture. Figures, cards, models."
+        },
+        {
+            "type": "Vintage/Rare",
+            "name": "Mandarake Complex",
+            "link": "https://www.google.com/maps/search/?api=1&query=Mandarake+Complex+Akihabara",
+            "desc": "The gold standard for vintage and rare collectibles. 8 floors of manga, toys, and cells."
+        },
+        {
+            "type": "Retro Games",
+            "name": "Super Potato",
+            "link": "https://www.google.com/maps/search/?api=1&query=Super+Potato+Akihabara",
+            "desc": "Famous retro game store with a 5th-floor arcade. A nostalgia overload."
+        },
+        {
+            "type": "Souvenirs/Night",
+            "name": "Don Quijote Akihabara",
+            "link": "https://www.google.com/maps/search/?api=1&query=Don+Quijote+Akihabara",
+            "desc": "Open 24 hours. Mass-market souvenirs, KitKats, cosmetics. Houses the AKB48 Theater."
         }
     ]
 
     # 2. Read Background Content
-    # Adjust path if script is running from root or scripts dir
-    md_path = 'shibuya_background.md'
-    if not os.path.exists(md_path):
-        # try referencing from root if we are in scripts (though we run python from root usually)
-        md_path = '../shibuya_background.md'
-        
-    with open(md_path, 'r') as f:
+    with open('akihabara_shopping.md', 'r') as f:
         md_content = f.read()
     
     background_html = markdown_to_html(md_content)
@@ -128,7 +153,7 @@ def generate_shibuya_page():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shibuya & Harajuku Guide - Japan Trip 2025</title>
+    <title>Akihabara Shopping Guide - Japan Trip 2025</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         .address-table {
@@ -148,7 +173,7 @@ def generate_shibuya_page():
             vertical-align: top;
         }
         .address-table th {
-            background-color: #6f42c1; /* Purple for Shibuya */
+            background-color: #007bff; /* Blue for Akihabara */
             color: white;
             font-weight: bold;
             text-transform: uppercase;
@@ -231,8 +256,8 @@ def generate_shibuya_page():
                 <li><a href="itinerary.html">Itinerary</a></li>
                 <li><a href="sunday-schedule.html">Sunday Plan</a></li>
                 <li><a href="ginza-shopping.html">Ginza Shopping</a></li>
-                <li><a href="shibuya.html" class="active">Shibuya & Harajuku</a></li>
-                <li><a href="akihabara.html">Akihabara Arcade</a></li>
+                <li><a href="shibuya.html">Shibuya & Harajuku</a></li>
+                <li><a href="akihabara.html" class="active">Akihabara Arcade</a></li>
                 <li><a href="suggestions.html">Suggestions</a></li>
                 <li><a href="tips.html">General Travel Tips</a></li>
                 <li><a href="prince-park.html">Prince Park</a></li>
@@ -246,12 +271,12 @@ def generate_shibuya_page():
         </nav>
         <main class="content">
             <header>
-                <h1>Shibuya & Harajuku Guide</h1>
+                <h1>Akihabara Shopping Guide</h1>
             </header>
 
             <section>
                 <h2>Quick Suggestions</h2>
-                <p>Curated list of spots in Shibuya and Harajuku.</p>
+                <p>Curated list of spots in Akihabara.</p>
                 
                 <table class="address-table">
                     <thead>
@@ -261,18 +286,11 @@ def generate_shibuya_page():
                         </tr>
                     </thead>
                     <tbody>
-"""
+""".strip()
     
     # 4. Generate Table Rows
     table_rows = ""
     for item in suggestions:
-        img_tag = ""
-        if item["image"]:
-            # Ensure path matches what we expect or is absolute/relative correctly
-            # In shibuya.md it said src/assets... we want assets/... for web
-            img_src = item["image"].replace("src/", "")
-            img_tag = f'<img src="{img_src}" alt="{item["name"]}" style="float:right; width: 120px; margin: 0 0 10px 15px; border-radius: 4px; border: 1px solid #ccc;">'
-        
         row = f"""
                         <tr>
                             <td>
@@ -281,7 +299,6 @@ def generate_shibuya_page():
                                 <a href="{item["link"]}" class="map-link" target="_blank">Google Maps</a>
                             </td>
                             <td class="description-text">
-                                {img_tag}
                                 {item["desc"]}
                             </td>
                         </tr>
@@ -295,7 +312,8 @@ def generate_shibuya_page():
             </section>
 
             <section class="background-content">
-"""
+                <h2>Akihabara Shopping Background Reading</h2>
+""".strip()
     html_template += background_html
     html_template += """
             </section>
@@ -304,12 +322,12 @@ def generate_shibuya_page():
     <script src="js/sw-register.js"></script>
 </body>
 </html>
-"""
+""".strip()
 
-    with open('src/shibuya.html', 'w') as f:
+    with open('src/akihabara.html', 'w') as f:
         f.write(html_template)
     
-    print("Created src/shibuya.html")
+    print("Created src/akihabara.html")
 
 if __name__ == "__main__":
-    generate_shibuya_page()
+    generate_page()

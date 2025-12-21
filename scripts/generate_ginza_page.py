@@ -247,6 +247,8 @@ for file_path in root_files + card_files:
                 <li><a href="{p}itinerary.html">Itinerary</a></li>
                 <li><a href="{p}sunday-schedule.html">Sunday Plan</a></li>
                 <li><a href="{p}ginza-shopping.html">Ginza Shopping</a></li>
+                <li><a href="{p}shibuya.html">Shibuya & Harajuku</a></li>
+                <li><a href="{p}akihabara.html">Akihabara Arcade</a></li>
                 <li><a href="{p}suggestions.html">Suggestions</a></li>
                 <li><a href="{p}tips.html">General Travel Tips</a></li>
                 <li><a href="{p}prince-park.html">Prince Park</a></li>
