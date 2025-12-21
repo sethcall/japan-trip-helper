@@ -274,6 +274,10 @@ def generate_page():
                 <h1>Akihabara Shopping Guide</h1>
             </header>
 
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="assets/infographics/akihabara_stores.png" alt="Akihabara Stores" style="max-width: 50%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            </div>
+
             <section>
                 <h2>Quick Suggestions</h2>
                 <p>Curated list of spots in Akihabara.</p>
