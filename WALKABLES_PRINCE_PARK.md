@@ -10,3 +10,11 @@ https://obenan-files-upload.s3.amazonaws.com/companies/175/listings/coverImages/
 
 An image to download and cache for our own site: 
 https://lh3.googleusercontent.com/p/AF1QipM7lnoWGxdmWMxz9LUamJGG5874JDZ_1UuzHP0e=s1360-w1360-h1020-rw
+
+## Porto
+* Genre: Breakfast Buffet
+* Directions Link: https://maps.app.goo.gl/rwAMapMAJyv2hfZh7
+
+## Panorama 33 “Sky Banquet”
+* Genre: Restaurant / Sky Banquet
+* Location: Inside Prince Park Tower Hotel (33rd Floor)
