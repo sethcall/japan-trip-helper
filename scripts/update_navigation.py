@@ -19,6 +19,7 @@ def update_navigation():
         ('words.html', 'Learn Words'),
         ('phrases.html', 'Learn Phrases'),
         ('install.html', 'Install App'),
+        ('monday-schedule.html', 'Monday Plan'),
         ('sunday-schedule.html', 'Sunday Plan'),
         ('blog-2025-12-21.html', 'Blog: Dec 21, Sunday'),
     ]
