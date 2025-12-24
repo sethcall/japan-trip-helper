@@ -1,0 +1,9 @@
+ This was again a Call-only day mostly (until the Edawrd's showed up at the end).
+
+We tried the breakfast buffet early in the hotel.  It was very good, we definitely enjoyed it.  It had tons of fruit juices (even Acai juice!), and both traditional French and some traditional Japane items like salmon and these brown/saucy balls.
+
+Around 9:00AM, we got on to the subway by taking the station very close to our hotel, and ended up in Shibuya Station/area.  We made the critical mistake (but I think required for a US traveler new to Tokyo) to use a VISA card for all 4 travelers; this is not how the subway works (you each need your own card, and you have to scan as you enter, and as you leave).   A frustrated but helpful attendant in the Subway helped us out.
+
+We then walked straight to Don Quijote, and went through all 7 floors; we scored some make up, anti-aging skin creams, and a gift for Isabelle Sanith.   But then we were so freaking exhausted afterwards; it was honestly brutal doing that.  So we recouped at this very cute, old, well-kept French coffee/bakery place; it was all red & wood inside, and incredibly quiet.   Anyway, after that, we sorta/kinda walked on Cat Street; went to the Capcom store briefly, but we diverted into the Yogogi Park and then Meiji Jingu (Shrine). This was fun for us because we tried to be respectful and follow all the custom; we bowed at each gate, we washed our hands/mouth, and we even donated some money and did the correct bow-bow-clap-clap-bow prayer (Seth also made a little prayer note).  
+
+After all that, we had enough, and so we went back home to rest.  Seth went walking to Roppongi Hills, a very upscale shopping area in search of men's clothing; he failed but hoped to bring the rest of the family. When he got back, the Edwards had arrived.  We tried to find somewhere to eat, but settled on Toyko Tower food court since it can be hard to seat 9 people in a pinch.  We went back home and all crashed after that
